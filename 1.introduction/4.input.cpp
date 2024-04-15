@@ -17,6 +17,7 @@ int main(){
     getline(cin, fullname); // to include name after space
     cout << "enter your age" <<endl;
     cin>>age;
+    cin.get() // as a good practice to stop value getting flow outside
     cout << fullname <<endl;
     cout<<"you will die at "<< age+60;
     return 0;
