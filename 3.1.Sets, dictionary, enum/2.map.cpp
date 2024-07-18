@@ -18,6 +18,7 @@ int main() {
 
     // Iteration
     cout << "All elements in the map:" << endl;
+    //auto: to automatically deduce the type of the variable from its initializer. 
     for (const auto& pair : myMap) {
         cout << pair.first << ": " << pair.second << endl;
     }
