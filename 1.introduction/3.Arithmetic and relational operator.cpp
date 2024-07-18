@@ -4,6 +4,7 @@
 using namespace std;
 
 int main(){
+    // change the way boolean values are printed to the standard output as true and false.
     cout << boolalpha;
     int a = 2;
     int b = 4;

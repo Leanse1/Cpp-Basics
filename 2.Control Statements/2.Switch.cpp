@@ -8,6 +8,7 @@ int main(){
  cout<<"please enter Grade";
  cin>>grade;
  cin.get();
+// grade = tolower(grade);   to remove two case for each
  
  switch(grade)
  {
