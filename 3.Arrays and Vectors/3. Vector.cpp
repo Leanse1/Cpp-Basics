@@ -1,6 +1,3 @@
-//unlike array, can dynamically resize as needed to accomodate more elements
-// no need to initialise memory capacity
-
 #include <iostream>
 #include <vector>
 #include <string>
@@ -18,21 +15,22 @@ int main()
  
  cout<< "someVec size " << someVec.size() <<endl;
  
+for (int val : someVec) {
+    cout << val << " ";
+}
+cout << endl;  
+
  anotherVec[0] = "John";
  anotherVec[1] = "Joiihn";
  anotherVec[2] = "Jdhiohn";
  
- anotherVec.push_back("ghiop");
- 
- for (int val : someVec)
- {
-     cout << val <<endl;
- }
+ anotherVec.push_back("ghiop"); //add last
  
  for (string name : anotherVec)
  {
-     cout << name <<endl;
+     cout << name <<" ";
  }
+ cout << endl;
  
  cout<<anotherVec.front()<<endl;
  cout<<anotherVec.back()<<endl;
@@ -41,6 +39,12 @@ int main()
  anotherVec.insert(anotherVec.begin() + 2,"don");  //insert
  cout<<anotherVec.front()<<endl;
  cout<<anotherVec.back()<<endl;
+ 
+  for (string name : anotherVec)
+ {
+     cout << name <<" ";
+ }
+ cout << endl;
  
     return 0;
 }
