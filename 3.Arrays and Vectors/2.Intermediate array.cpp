@@ -8,7 +8,7 @@ int main()
     array<int, 10> myIntArray{1,2};
     
     // fill remaining with 0
-    for (int number : myIntArray)
+    for (int number : myIntArray)  //same as for number in myIntArray in python
     {
         cout << number <<endl;
     }
