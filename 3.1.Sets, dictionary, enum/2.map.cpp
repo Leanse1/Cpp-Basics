@@ -14,11 +14,11 @@ int main() {
 
     // Accessing Elements
     cout << "Alice's age: " << myMap["Alice"] << endl;
-    cout << "Bob's age: " << myMap.at("Bob") << endl;
+    cout << "Bob's age: " << myMap.at("Bob") << endl<< endl;
 
-    // Iteration
-    cout << "All elements in the map:" << endl;
+    cout << "All elements in the map:" << endl <<endl;
     //auto: to automatically deduce the type of the variable from its initializer. 
+    //&- Instead of making a copy of a large object, you can use a reference to avoid extra work and save memory.
     for (const auto& pair : myMap) {
         cout << pair.first << ": " << pair.second << endl;
     }
@@ -26,16 +26,16 @@ int main() {
     // Finding an Element
     auto it = myMap.find("Charlie");
     if (it != myMap.end()) {
-        cout << "Found: " << it->first << " -> " << it->second << endl;
+        cout << "Found: " << it->first << " -> " << it->second << endl<<endl;
     } else {
-        cout << "Not found" << endl;
+        cout << "Not found" << endl<<endl;
     }
 
     // Deletion
     myMap.erase("Alice");
     cout << "After removing Alice:" << endl;
     for (const auto& pair : myMap) {
-        cout << pair.first << ": " << pair.second << endl;
+        cout << pair.first << ": " << pair.second << endl<< endl;
     }
 
     // Size and Capacity
@@ -48,3 +48,4 @@ int main() {
 
     return 0;
 }
+
