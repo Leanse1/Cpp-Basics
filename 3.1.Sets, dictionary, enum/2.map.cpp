@@ -19,7 +19,7 @@ int main() {
     cout << "All elements in the map:" << endl <<endl;
     //auto: to automatically deduce the type of the variable from its initializer. 
     //&- Instead of making a copy of a large object, you can use a reference to avoid extra work and save memory.
-    for (const auto& pair : myMap) {
+    for (auto pair : myMap) {
         cout << pair.first << ": " << pair.second << endl;
     }
 
@@ -48,4 +48,7 @@ int main() {
 
     return 0;
 }
+
+
+
 
