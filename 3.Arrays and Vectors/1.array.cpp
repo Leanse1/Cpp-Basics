@@ -35,7 +35,7 @@ int main() {
     if (insertIndex >= 0 && insertIndex <= size) {
         // Shift elements to the right
         for (int i = size; i > insertIndex; i--) {
-             arr[i] = arr[i - 1]; //5 = 4, 6 = 5
+             arr[i] = arr[i - 1]; //6 = 5, 5=4
         }
         arr[insertIndex] = insertValue;
         ++size;
