@@ -144,6 +144,7 @@ int main() {
     shared_ptr<MyClass> ptr1(new MyClass()); // Creating a shared_ptr
     weak_ptr<MyClass> weakPtr = ptr1; // Creating a weak_ptr from shared_ptr
 
+    // auto keyword is used to automatically deduce the type of a variable at compile-time
     if (auto sharedPtr = weakPtr.lock()) { // Lock the weak_ptr to get a shared_ptr
         sharedPtr->display(); // Using the object
         cout << "sharedPtr use_count: " << sharedPtr.use_count() << '\n';
@@ -162,6 +163,13 @@ int main() {
     return 0;
 }
 
+Output
+
+MyClass Constructor
+Hello from MyClass
+sharedPtr use_count: 2
+MyClass Destructor
+The object has been deleted.
 
 -----------------------------------------------------------------------------------------------------------------------------
 
