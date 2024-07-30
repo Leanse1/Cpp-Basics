@@ -1,9 +1,13 @@
-//allocated at runtime instead of set at compile time
+//memory allocated at runtime instead of set at compile time
+//keywords: new, delete
+
+
+
 #include <iostream>
 using namespace std;
 
 int main() {
-    // Dynamic allocation of a single integer
+    // Dynamic allocation of memory (same as dereferencing but are different)
     int *ptr1 = new int;  // Allocate memory for a single integer
     *ptr1 = 10;            // Assign a value to the dynamically allocated integer
 
