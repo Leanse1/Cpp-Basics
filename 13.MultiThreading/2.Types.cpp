@@ -153,6 +153,49 @@ int main() {
 
 ######################################## Static member function ###############################
 
+#include <iostream>
+#include <thread>
+#include <vector>
+
+using namespace std;
+
+class TaskManager {
+public:
+    // Static member function
+    static void performTask(int taskId) {
+        cout << "Task " << taskId << " is running on thread " << this_thread::get_id() << endl;
+        // Simulate work with a loop
+        for (int i = 0; i < 5; ++i) {
+            cout << "Task " << taskId << " is working... Iteration " << i + 1 << endl;
+        }
+        cout << "Task " << taskId << " is completed on thread " << this_thread::get_id() << endl;
+    }
+
+    // Method to start multiple threads
+    void startTasks(int numTasks) {
+        vector<thread> threads;
+
+        // Create and start threads
+        for (int i = 0; i < numTasks; ++i) {
+            threads.push_back(thread(TaskManager::performTask, i + 1));
+        }
+
+        // Join threads to wait for them to finish
+        for (auto& thread : threads) {
+            thread.join();
+        }
+    }
+};
+
+int main() {
+    TaskManager manager;
+    int numTasks = 3;  // Number of tasks to run
+
+    cout << "Starting tasks using static member function..." << endl;
+    manager.startTasks(numTasks);
+
+    return 0;
+}
 
 
 
