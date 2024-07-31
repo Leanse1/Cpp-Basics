@@ -10,8 +10,8 @@ void localDemo() {
     static int staticVar = 0; // Static variable
 
     localVar++; // local variable will initialise every time to 0
-    staticVar++;// static variable store new value every time
-    globalVar++;// global variable store new value every time
+    staticVar++;// static variable store new value every time; accessible only inside class
+    globalVar++;// global variable store new value every time; accessible throughout program
 
     cout << "Local variable: " << localVar << endl;
     cout << "Static variable: " << staticVar << endl;
