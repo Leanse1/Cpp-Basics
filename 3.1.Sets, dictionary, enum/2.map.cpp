@@ -1,3 +1,5 @@
+// store unique key in sorted order
+
 #include <iostream>
 #include <map>
 #include <string>
@@ -56,5 +58,60 @@ int main() {
 }
 
 
+// Multimap: duplicate key in sorted order
 
+#include <iostream>
+#include <map>
 
+using namespace std;
+
+int main() {
+    // Create a multimap with integer keys and string values
+    multimap<int, string> myMultimap;
+
+    // Adding elements to the multimap
+    myMultimap.insert({1, "apple"});
+    myMultimap.insert({2, "banana"});
+    myMultimap.insert({1, "apricot"});
+    myMultimap.insert({3, "cherry"});
+    myMultimap.insert({2, "blueberry"});
+    myMultimap.insert({4, "date"});
+
+    // Print the elements of the multimap
+    cout << "Elements in the multimap: " << endl;
+    for (const auto& pair : myMultimap) {
+        cout << pair.first << " => " << pair.second << endl;
+    }
+    cout << endl;
+
+    // Find and print all values associated with a specific key
+    int key = 2;
+    auto range = myMultimap.equal_range(key);
+
+    cout << "Values associated with key " << key << ": ";
+    for (auto it = range.first; it != range.second; ++it) {
+        cout << it->second << " ";
+    }
+    cout << endl;
+
+    // Erase all elements with a specific key
+    myMultimap.erase(key);
+
+    // Print the elements after erasure
+    cout << "Elements after erasing key " << key << ": " << endl;
+    for (const auto& pair : myMultimap) {
+        cout << pair.first << " => " << pair.second << endl;
+    }
+    cout << endl;
+
+    // Check the size of the multimap
+    cout << "Size of the multimap: " << myMultimap.size() << endl;
+
+    // Clear the multimap
+    myMultimap.clear();
+    cout << "Size of the multimap after clearing: " << myMultimap.size() << endl;
+
+    return 0;
+}
+
+//unordered map: not sorted unique keys
