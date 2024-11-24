@@ -1,4 +1,4 @@
-//Pointer stores the memory address of variable rather than variable. 
+//Pointer stores the memory address of variable rather than variable. each time value of data gets changed or overridden it gets stored in same memory address. no new memory is allotted
 
 // &x gives the memory addres of x rather than value of x.
 
